@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MyBubbleSort{
 	public static void bubbleSort(int[] list){
 		boolean needNextPass = true;
@@ -17,8 +19,16 @@ public class MyBubbleSort{
 	}
 	
 	public static void main(String[] args){
-		int[] list = {5, 4, 8, 12, -3, 89, 7, 10};
-		bubbleSort(list);
+		Scanner input = new Scanner(System.in);
+		System.out.println("想輸入幾個數字?");
+		int num = input.nextInt();
+		int[] list = new int[num];
+		
+		System.out.println("請輸入 " + num + " 個數字 :");
+		for(int i = 0; i < num; i++){
+			list[i] =  input.nextInt();
+			bubbleSort(list);
+		}
 		for(int i = 0; i < list.length; i++){
 			System.out.print(list[i] + " ");
 		}
